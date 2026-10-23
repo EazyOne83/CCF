@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request a Discovery Session | Human OS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="discovery-page">
+    
+    <header class="site-header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Coherent Systems Institute</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="human-os.html">Human OS</a>
+                <a href="framework.html">Framework</a>
+                <a href="your-journey.html">Your Journey</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="section">
+            <div class="section-header">
+
+                <p class="eyebrow">HUMAN OS · DISCOVERY SESSION</p>
+
+                <h1>Let's Start With You.</h1>
+
+                <p>
+                    Everyone has a different story, different challenges,
+                    and different goals. The Human OS Discovery Session
+                    is an opportunity to explore yours.
+                </p>
+
+                <p>
+                    Share a little about yourself and request a
+                    one-on-one conversation. I'll review your request
+                    and contact you to discuss scheduling.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+
+                <h2>Request Your Session</h2>
+
+                <p>
+                    Complete the form below to tell me what you're
+                    looking for and how best to reach you.
+                </p>
+
+            </div>
+
+            <form id="discovery-request-form" class="discovery-form">
+
+                <div class="form-group">
+                    <label for="full-name">Your name</label>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="fullName"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-method">
+                        Preferred way to connect
+                    </label>
+
+                    <select
+                        id="contact-method"
+                        name="contactMethod"
+                        required
+                    >
+                        <option value="">Choose an option</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="video">Video conversation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">
+                        When are you generally available?
+                    </label>
+
+                    <select
+                        id="availability"
+                        name="availability"
+                        required
+                    >
+                        <option value="">Choose a time preference</option>
+                        <option value="weekday-mornings">
+                            Weekday mornings
+                        </option>
+                        <option value="weekday-afternoons">
+                            Weekday afternoons
+                        </option>
+                        <option value="weekday-evenings">
+                            Weekday evenings
+                        </option>
+                        <option value="weekends">
+                            Weekends
+                        </option>
+                        <option value="flexible">
+                            Flexible
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="goals">
+                        What would you like to explore?
+                    </label>
+
+                    <textarea
+                        id="goals"
+                        name="goals"
+                        rows="5"
+                        placeholder="Tell me a little about what brings you here and what you hope to gain."
+                        required
+                    ></textarea>
+                </div>
+
+                <p class="form-note">
+                    Your request is not a confirmed appointment.
+                    I'll contact you to discuss a suitable time.
+                </p>
+
+                <button type="submit" class="btn">
+                    Submit Session Request
+                </button>
+
+                <p id="form-message" role="status" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 Coherent Systems Institute.
+            All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        document
+            .getElementById("discovery-request-form")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                document.getElementById("form-message").textContent =
+                    "This form is not connected yet, so your request has not been sent. Please check back soon.";
+            });
+    </script>
+
+</body>
+</html>

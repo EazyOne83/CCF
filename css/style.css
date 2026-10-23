@@ -680,3 +680,136 @@ h3 {
         animation: none;
     }
 }
+
+/* HUMAN OS DISCOVERY SESSION PAGE */
+
+body.discovery-page main {
+    padding-bottom: 60px;
+}
+
+.discovery-page .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.discovery-page .section-header {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.discovery-page .section-header h1 {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.discovery-page .section-header h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom: 14px;
+}
+
+.discovery-page .discovery-form {
+    width: min(100% - 36px, 680px);
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 44px);
+    border: 1px solid rgba(120, 150, 160, 0.25);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+.discovery-page .form-group {
+    margin-bottom: 24px;
+}
+
+.discovery-page .form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.discovery-page .form-group input,
+.discovery-page .form-group select,
+.discovery-page .form-group textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border: 1px solid rgba(130, 150, 165, 0.45);
+    border-radius: 10px;
+    background: rgba(120, 140, 155, 0.08);
+    color: inherit;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discovery-page .form-group input:focus,
+.discovery-page .form-group select:focus,
+.discovery-page .form-group textarea:focus {
+    outline: none;
+    border-color: #319d91;
+    box-shadow: 0 0 0 3px rgba(49, 157, 145, 0.16);
+}
+
+.discovery-page .form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.discovery-page .form-group select option {
+    color: #17232b;
+    background: #ffffff;
+}
+
+.discovery-page .form-note {
+    margin: 8px 0 24px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    opacity: 0.8;
+}
+
+.discovery-page .discovery-form button {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.discovery-page .discovery-form button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.discovery-page #form-message {
+    margin-top: 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .discovery-page .section {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .discovery-page .discovery-form {
+        width: calc(100% - 28px);
+        padding: 22px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .discovery-page .form-group input,
+    .discovery-page .form-group select,
+    .discovery-page .form-group textarea,
+    .discovery-page .discovery-form button {
+        transition: none;
+    }
+}
