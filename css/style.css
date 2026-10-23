@@ -626,3 +626,57 @@ h3 {
         padding: 28px 16px;
     }
 }
+/* YOUR JOURNEY — animated background */
+#offerings,
+#book-details,
+#program-details,
+#conversation-details {
+    position: relative;
+    isolation: isolate;
+}
+
+#offerings::before,
+#book-details::before,
+#program-details::before,
+#conversation-details::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 15% 30%,
+            rgba(35, 155, 135, 0.16),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 85% 70%,
+            rgba(50, 100, 170, 0.14),
+            transparent 45%
+        );
+    background-size: 160% 160%;
+    animation: journeyBackgroundFlow 16s ease-in-out infinite alternate;
+    border-radius: 18px;
+}
+
+@keyframes journeyBackgroundFlow {
+    0% {
+        background-position: 0% 20%, 100% 80%;
+    }
+    50% {
+        background-position: 70% 60%, 20% 30%;
+    }
+    100% {
+        background-position: 100% 80%, 0% 20%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #offerings::before,
+    #book-details::before,
+    #program-details::before,
+    #conversation-details::before {
+        animation: none;
+    }
+}
