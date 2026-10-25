@@ -72,14 +72,19 @@ a:focus-visible {
 nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 nav a,
 footer a {
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -812,4 +817,22 @@ body.discovery-page main {
     .discovery-page .discovery-form button {
         transition: none;
     }
+}
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 22px 20px;
+  }
 }
