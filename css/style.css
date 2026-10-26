@@ -933,25 +933,26 @@ h1 em,
   border-color: rgba(25, 212, 154, 0.5);
   color: var(--brand-emerald);
 }
-/* CSI Logo — Larger Header Branding */
+/* CSI Logo — Prominent, Blended Branding */
 .site-header .brand {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   flex-shrink: 0;
 }
 
 .site-header .brand-logo {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 .site-header .brand-name {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.25;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   color: var(--text);
@@ -961,10 +962,26 @@ h1 em,
   color: var(--brand-emerald);
 }
 
+@media (max-width: 900px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .site-header .brand-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .site-header nav {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 600px) {
   .site-header .brand-logo {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
   }
 
   .site-header .brand-name {
