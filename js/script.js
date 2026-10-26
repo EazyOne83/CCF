@@ -1,3 +1,58 @@
+/* ===============================================================
+   CSI SHARED HEADER — standardize the logo and navigation on
+   interior pages without rewriting their content or forms.
+   The homepage already has this header and is left untouched.
+   =============================================================== */
+(() => {
+  const isHome = !!document.querySelector('.arrival');
+  if (isHome) return;
+
+  const sections = [
+    ['framework.html', 'Framework'],
+    ['human-os.html', 'Human OS'],
+    ['discovery-session.html', 'Discovery Session'],
+    ['index.html#dynamics', 'Dynamics'],
+    ['index.html#journey', "Hero's Journey"],
+    ['index.html#research', 'Research'],
+    ['https://coherentsystems.discourse.group/', 'Community'],
+    ['index.html#about', 'About']
+  ];
+  const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  let header = document.querySelector('header.site-header');
+  if (!header) {
+    header = document.createElement('header');
+    header.className = 'site-header';
+    document.body.insertBefore(header, document.body.firstChild);
+  }
+  header.classList.add('csi-shared-header');
+  const brand = document.createElement('a');
+  brand.className = 'brand';
+  brand.href = 'index.html#home';
+  brand.setAttribute('aria-label', 'Coherent Systems Institute home');
+  const logo = document.createElement('img');
+  logo.src = 'images/csi-logo.png';
+  logo.alt = 'Coherent Systems Institute — Expanding Human Experience';
+  logo.className = 'brand-logo';
+  logo.decoding = 'async';
+  brand.appendChild(logo);
+
+  const nav = document.createElement('nav');
+  nav.setAttribute('aria-label', 'Main navigation');
+  for (const [href, title] of sections) {
+    const link = document.createElement('a');
+    link.href = href;
+    link.textContent = title;
+    if (href.startsWith('https://')) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+    if (href.toLowerCase() === currentFile) link.setAttribute('aria-current', 'page');
+    nav.appendChild(link);
+  }
+  // Replace the old logo/nav; keep the rest of every page unmodified.
+  header.replaceChildren(brand, nav);
+})();
+
 // Keep the footer year current.
 const yearElement = document.getElementById("current-year");
 if (yearElement) {
