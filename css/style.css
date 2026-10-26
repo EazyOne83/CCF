@@ -1483,101 +1483,131 @@ body{background:#030916}
 }
 @media(prefers-reduced-motion:reduce){.arrival-scene{animation:none!important}.portal,.portal-art{transition:none!important}}
 
-
-/* ================================================================
-   CSI V3 — CONTINUOUS PLANETARY WORLD
-   The cosmic scene is anchored to the viewport, not the arrival.
-   All page sections move in front of this same visible Earth.
-   Scoped to the home page so Framework / Human OS remain unchanged.
-   ================================================================ */
-.home-page {
-  min-height: 100%;
-  background: #020915;
+/* ============================================================
+   CSI LIVING EARTH V5 — The original cinematic layout remains.
+   The space scene is a passive, persistent backdrop, not a widget.
+   ============================================================ */
+body.csi-living-earth {
+  background:#01040c;
+  isolation:isolate;
 }
-.home-page .world-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: #020915 url('../images/cosmic-earth.webp') center center / cover no-repeat;
+.csi-living-earth .csi-space-environment {
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  background:#010611;
+  contain:layout paint;
 }
-/* Atmospheric shading keeps the nebula bright and body text legible. */
-.home-page .world-backdrop::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-    rgba(1,5,16,.13) 0%,
-    rgba(0,5,16,.05) 46%,
-    rgba(0,6,18,.17) 75%,
-    rgba(0,4,13,.3) 100%);
+.csi-living-earth .csi-space-environment::before {
+  content:"";
+  position:absolute;
+  inset:-3%;
+  background:url('../images/cosmic-sky.webp') center top / cover no-repeat;
+  opacity:.78;
+  animation:csiSkyDrift 95s ease-in-out infinite alternate;
 }
-/* Foreground composition, including sections outside <main>. */
-.home-page > main,
-.home-page > .discovery-cta,
-.home-page > .site-footer {
-  position: relative;
-  z-index: 1;
+.csi-living-earth .csi-earth-render,
+.csi-living-earth .csi-constellations {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
 }
-/* Keep navigation available during the journey. */
-.home-page .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
+.csi-living-earth .csi-earth-render {z-index:2;opacity:.98}
+.csi-living-earth .csi-constellations {z-index:1;opacity:.72}
+/* Very narrow atmospheric rim — no enclosing pale blue bubble. */
+.csi-living-earth .csi-horizon-light {
+  position:absolute;
+  z-index:3;
+  top:55%;left:10%;width:80%;height:9%;
+  background:radial-gradient(ellipse at center top,rgba(29,174,255,.14),transparent 72%);
+  filter:blur(18px);
+  opacity:.66;
 }
-.home-page .arrival {
-  background: transparent;
+/* Darken every outer edge/corner, preserving an illuminated focal center. */
+.csi-living-earth .csi-space-vignette {
+  position:absolute;
+  z-index:4;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.67) 0%,rgba(0,0,0,.20) 16%,transparent 38%,transparent 62%,rgba(0,0,0,.20) 84%,rgba(0,0,0,.72) 100%),
+    radial-gradient(ellipse 93% 85% at 50% 47%,transparent 28%,rgba(0,0,4,.15) 54%,rgba(0,0,3,.6) 85%,rgba(0,0,0,.85) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.42),transparent 19%,transparent 61%,rgba(0,0,0,.37) 100%);
 }
-/* The Earth is no longer tied to the arrival section. */
-.home-page .arrival-scene {
-  display: none;
+.csi-living-earth>.site-header,
+.csi-living-earth>main,
+.csi-living-earth>.discovery-cta,
+.csi-living-earth>.site-footer,
+.csi-living-earth>section {
+  position:relative;
+  z-index:1;
 }
-.home-page .arrival::before {
-  background: linear-gradient(180deg,
-    rgba(0,3,15,.08) 0%,
-    rgba(0,5,16,.04) 48%,
-    rgba(0,3,11,.11) 70%,
-    rgba(0,4,12,.35) 100%);
+.csi-living-earth>.site-header {
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:linear-gradient(180deg,rgba(0,4,13,.97),rgba(0,7,19,.89));
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
 }
-/* Gentle glass layers avoid covering up the fixed horizon when scrolling. */
-.home-page main > .section {
-  background: linear-gradient(112deg,
-    rgba(1,8,21,.82) 0%,
-    rgba(2,12,29,.73) 55%,
-    rgba(1,9,23,.81) 100%);
-  border-top: 1px solid rgba(55,193,236,.22);
+.csi-living-earth .arrival {
+  background:transparent;
+  isolation:auto;
 }
-.home-page main > .section:nth-of-type(2n) {
-  background: linear-gradient(112deg,
-    rgba(1,8,21,.74),
-    rgba(3,19,39,.7) 60%,
-    rgba(1,8,21,.78));
+.csi-living-earth .arrival-scene {display:none !important}
+.csi-living-earth .arrival::before {
+  background:linear-gradient(180deg,rgba(0,4,12,.1),transparent 38%,rgba(0,4,12,.20) 70%,rgba(0,3,8,.54) 100%);
 }
-.home-page main > .arrival-overview {
-  background: linear-gradient(110deg,
-    rgba(1,9,22,.76), rgba(3,20,39,.65), rgba(1,8,21,.76));
+.csi-living-earth .arrival::after {display:none}
+.csi-living-earth .arrival-content,.csi-living-earth .portal-grid {z-index:2}
+.csi-living-earth main>.section {
+  background:linear-gradient(180deg,rgba(0,5,14,.79),rgba(1,9,22,.72));
+  border-top-color:rgba(48,163,217,.19);
+  -webkit-backdrop-filter:blur(2px);
+  backdrop-filter:blur(2px);
 }
-.home-page .section h2,
-.home-page .section h3 {text-shadow: 0 2px 16px rgba(0,0,0,.38)}
-.home-page .section .section-intro,
-.home-page .section > p:not(.eyebrow) {
-  color: #c7d7e9;
+.csi-living-earth main>.section:nth-of-type(2n) {
+  background:linear-gradient(180deg,rgba(0,4,12,.86),rgba(0,6,15,.67));
 }
-.home-page > .discovery-cta {
-  background: rgba(1,9,24,.78);
+.csi-living-earth .arrival-overview {background:linear-gradient(180deg,rgba(0,5,14,.65),rgba(0,5,14,.81))}
+.csi-living-earth .site-footer,
+.csi-living-earth .discovery-cta {background:rgba(0,4,12,.85)}
+/* Subpages keep their own layout, but the world now continues behind them. */
+.csi-living-earth:not(.home-page) main {
+  background:linear-gradient(90deg,rgba(0,4,12,.73),rgba(0,4,12,.58));
 }
-.home-page .site-footer {
-  background: rgba(1,7,19,.88);
-  border-top: 1px solid rgba(29,208,245,.3);
+.csi-living-earth:not(.home-page) main>.section {
+  background:rgba(1,6,16,.56);
+  border-radius:0;
 }
-@media (max-width: 690px) {
-  .home-page .world-backdrop {
-    background-position: 50% center;
-    background-size: auto 100%;
+.csi-living-earth .portal {
+  background:linear-gradient(180deg,rgba(2,16,35,.53),rgba(0,5,15,.90));
+  box-shadow:inset 0 0 24px rgba(3,128,194,.055),0 9px 45px rgba(0,0,0,.43);
+}
+.csi-living-earth .portal:focus-visible {outline:2px solid #23eafa;outline-offset:4px}
+.csi-living-earth.csi-page-leaving>.site-header,
+.csi-living-earth.csi-page-leaving>main {
+  opacity:.3;
+  transform:translateY(5px);
+  transition:opacity .25s ease,transform .25s ease;
+}
+@keyframes csiSkyDrift {from{transform:translate3d(-.8%,0,0) scale(1.02)}to{transform:translate3d(.8%,-1%,0) scale(1.05)}}
+@media(max-width:690px) {
+  .csi-living-earth .csi-space-vignette {
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.48),transparent 27%,transparent 73%,rgba(0,0,0,.52)),
+      radial-gradient(ellipse 100% 85% at 50% 44%,transparent 18%,rgba(0,0,0,.27) 64%,rgba(0,0,0,.80) 100%);
   }
-  /* On small screens, don't permanently cover space with the tall nav. */
-  .home-page .site-header { position: relative; }
-  .home-page main > .section {
-    background: rgba(2,10,25,.81);
-  }
+  .csi-living-earth .csi-earth-render {opacity:.84}
+  .csi-living-earth .portal-grid {margin-top:84px}
+  .csi-living-earth>.site-header {position:relative}
+  .csi-living-earth .arrival {min-height:0}
+}
+@media(prefers-reduced-motion:reduce) {
+  .csi-living-earth .csi-space-environment::before {animation:none}
+  .csi-living-earth.csi-page-leaving>.site-header,
+  .csi-living-earth.csi-page-leaving>main {transition:none;transform:none}
 }
