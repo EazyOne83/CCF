@@ -43,3 +43,6 @@ document.querySelectorAll('#framework .card').forEach((card) => {
   card.addEventListener('focusin', () => card.classList.add('is-highlighted'));
   card.addEventListener('focusout', () => card.classList.remove('is-highlighted'));
 });
+
+// The arrival cards link to live descriptions further down the same page.
+// Keyboard and pointer activation use normal anchors so browser history works.

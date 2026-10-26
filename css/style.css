@@ -1375,3 +1375,209 @@ body::before {
     transition: none !important;
   }
 }
+
+
+/* ===============================================================
+   CSI CINEMATIC ARRIVAL • Reference-image edition
+   Existing inner-page CSS and site content remain compatible.
+   =============================================================== */
+:root{--csi-cyan:#04dffa;--csi-sky:#38baff;--csi-green:#23f1ca}
+html{scroll-padding-top:105px}
+body{background:#030916}
+.site-header{
+  flex-direction:row;justify-content:space-between;align-items:center;gap:clamp(18px,2vw,36px);
+  width:100%;min-height:140px;padding:14px clamp(25px,5.1vw,92px);
+  position:relative;z-index:30;border-bottom:1px solid #00b9ea;
+  background:linear-gradient(180deg,rgba(1,8,19,.99),rgba(1,11,25,.96));
+  box-shadow:0 1px 0 rgba(46,232,255,.13),0 10px 35px rgba(0,0,0,.24)
+}
+.site-header>.brand{width:clamp(270px,29vw,495px);justify-content:flex-start;min-width:0}
+.site-header>.brand .brand-logo{width:100%;max-width:495px;max-height:112px;object-fit:contain;filter:drop-shadow(0 0 7px rgba(0,218,255,.23))}
+.site-header>nav{width:auto;flex:1;justify-content:flex-end;flex-wrap:nowrap;gap:clamp(6px,.95vw,16px)}
+.site-header>nav a{
+  flex-shrink:0;position:relative;white-space:nowrap;
+  border-radius:10px;padding:11px clamp(10px,1.03vw,19px);
+  color:#f0faff;text-transform:none;font-size:clamp(.68rem,.91vw,.96rem);letter-spacing:0;
+  font-weight:600;background:linear-gradient(135deg,rgba(0,18,36,.88),rgba(0,10,23,.98));
+  border:1px solid rgba(0,200,249,.75);
+  box-shadow:inset 0 0 11px rgba(5,209,247,.08),0 0 4px rgba(0,208,255,.05)
+}
+.site-header>nav a:first-child,.site-header>nav a[aria-current="page"]{
+  border-color:#00ddff;box-shadow:0 0 13px rgba(0,230,255,.46),inset 0 0 10px rgba(0,198,245,.14)
+}
+.site-header>nav a:hover,.site-header>nav a:focus-visible{border-color:#4fffff;box-shadow:0 0 20px rgba(0,227,255,.41);background:#092740}
+.site-header>nav a::after{bottom:-6px;height:2px;border-radius:4px}
+.site-header>nav a:first-child::after{opacity:1;transform:scaleX(1)}
+.arrival{position:relative;isolation:isolate;overflow:hidden;width:100%;min-height:calc(100svh - 140px);height:auto;max-width:none;margin:0;background:#030b17;display:flex;flex-direction:column;align-items:center;padding:72px clamp(24px,6vw,110px) 46px}
+.arrival-scene{position:absolute;z-index:-2;inset:0;background-image:url('../images/cosmic-earth.webp');background-size:cover;background-position:center top;background-repeat:no-repeat;transform:scale(1.015);animation:arrivalDrift 30s ease-in-out infinite alternate}
+.arrival::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(0,3,15,.12) 0%,rgba(0,5,16,.08) 47%,rgba(0,3,11,.15) 70%,rgba(0,4,12,.68) 100%);pointer-events:none}
+.arrival::after{content:"";position:absolute;top:40%;left:50%;width:58vw;height:6px;transform:translateX(-50%);pointer-events:none;background:radial-gradient(ellipse,rgba(28,239,255,.45),transparent 70%);filter:blur(12px)}
+.arrival-content{width:min(100%,1380px);text-align:center;position:relative;z-index:1}
+.arrival h1{margin:0 auto;max-width:1400px;font-size:clamp(2.25rem,4.32vw,4.75rem);line-height:1.08;font-weight:440;letter-spacing:-.035em;color:#f7fbff;text-shadow:0 3px 16px rgba(0,0,0,.72)}
+.arrival h1 span{display:block;font-weight:570;color:#07ddfa;letter-spacing:-.023em;text-shadow:0 0 22px rgba(0,219,255,.32),0 3px 12px rgba(0,0,0,.48)}
+.arrival-lightline{height:2px;width:min(80%,920px);margin:20px auto 22px;background:linear-gradient(90deg,transparent,rgba(13,215,242,.45),#09e3fe,rgba(19,218,250,.4),transparent);box-shadow:0 0 10px #00eaff}
+.arrival-tagline{color:#eef5fc;font-size:clamp(.9rem,1.26vw,1.45rem);letter-spacing:clamp(.17em,.42vw,.4em);line-height:1.6;text-transform:uppercase;font-weight:430;text-shadow:0 2px 12px rgba(0,0,0,.9);margin:0 auto}
+.portal-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.85vw,48px);width:min(100%,1450px);margin:clamp(74px,7.5vw,136px) auto 0}
+.portal{
+  min-width:0;min-height:clamp(258px,18vw,308px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  padding:10px 14px 16px;border:1px solid rgba(0,196,255,.85);border-radius:17px;
+  color:#f5faff;text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(2,18,38,.6),rgba(0,7,19,.86));
+  box-shadow:inset 0 0 24px rgba(3,128,194,.065),0 8px 36px rgba(0,0,0,.29);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease,background .32s ease
+}
+.portal::after{content:"";position:absolute;inset:auto 12% -1px;height:2px;background:linear-gradient(90deg,transparent,#0de2ff,transparent);box-shadow:0 0 10px #0de2ff}
+.portal:hover,.portal:focus-visible{transform:translateY(-9px);border-color:#53efff;box-shadow:0 0 32px rgba(4,208,255,.22),inset 0 0 22px rgba(2,155,223,.08);outline:none}
+.portal-art{display:block;width:min(78%,300px);height:clamp(130px,10.5vw,184px);object-fit:contain;object-position:center center;filter:drop-shadow(0 0 7px rgba(1,205,255,.3));transition:transform .5s ease,filter .5s ease}
+.portal:hover .portal-art,.portal:focus-visible .portal-art{transform:scale(1.08) translateY(-2px);filter:drop-shadow(0 0 17px rgba(5,226,255,.55))}
+.portal-emc .portal-art{width:min(90%,335px)}
+.portal-imc .portal-art{width:min(85%,315px)}
+.portal-initials{display:block;font-size:clamp(1.65rem,2vw,2.28rem);font-weight:470;letter-spacing:.36em;line-height:1.25;margin:0 0 1px .36em}
+.portal-title{display:block;font-size:clamp(.86rem,1.13vw,1.23rem);font-weight:400;text-transform:uppercase;letter-spacing:.38em;margin-left:.38em;line-height:1.5}
+.portal-rule{height:1px;width:72%;margin:6px 0;background:linear-gradient(90deg,transparent,rgba(12,224,249,.8),transparent);box-shadow:0 0 7px rgba(4,217,255,.45)}
+.portal-motto{display:block;font-size:clamp(.82rem,1.13vw,1.15rem);font-style:italic;line-height:1.35;font-weight:350}
+.arrival-scroll{display:flex;gap:11px;align-items:center;position:relative;z-index:2;margin-top:26px;text-transform:uppercase;color:#a0cfde;font-size:.68rem;letter-spacing:.22em;opacity:.75;transition:opacity .2s}
+.arrival-scroll:hover{opacity:1;color:white}
+.arrival-overview{padding-top:clamp(75px,8vw,115px);background:radial-gradient(ellipse at center top,rgba(3,56,95,.23),transparent 70%)}
+.arrival-overview h2{max-width:900px}
+.arrival-overview .hero-note{margin-top:30px}
+#framework-pmc,#framework-emc,#framework-imc{scroll-margin-top:115px}
+#framework .card:target{border-color:#08e8ff;box-shadow:0 0 32px rgba(0,210,255,.25)}
+@keyframes arrivalDrift{from{transform:scale(1.015) translateY(0)}to{transform:scale(1.06) translateY(-9px)}}
+@media(max-width:1440px){
+  .site-header{padding:12px 2.5%;min-height:120px}
+  .site-header>.brand{width:clamp(240px,26vw,390px)}
+  .site-header>nav{gap:7px}
+  .site-header>nav a{padding:10px 9px;font-size:clamp(.64rem,.88vw,.86rem)}
+  .arrival{min-height:calc(100svh - 120px)}
+  .portal-grid{margin-top:clamp(65px,7vw,100px)}
+}
+@media(max-width:1080px){
+  .site-header{flex-direction:column;gap:4px;padding:10px 3% 13px;position:relative}
+  .site-header>.brand{width:min(70vw,440px);justify-content:center}
+  .site-header>nav{justify-content:center;flex-wrap:wrap;width:100%;gap:8px}
+  .site-header>nav a{font-size:.78rem;padding:9px 12px}
+  .arrival{padding-top:70px;min-height:680px}
+  .arrival h1{font-size:clamp(2.1rem,5vw,4rem)}
+  .portal-grid{gap:16px;margin-top:80px}
+  .portal{min-height:265px}
+}
+@media(max-width:690px){
+  .site-header{gap:4px;padding:10px 3% 13px}
+  .site-header>.brand{width:min(90vw,450px)}
+  .site-header>nav{gap:7px}
+  .site-header>nav a{font-size:.72rem;padding:9px 10px;border-radius:7px}
+  .arrival{padding:65px 4% 35px;min-height:0}
+  .arrival-scene{background-size:auto 780px;background-position:center top}
+  .arrival h1{font-size:clamp(2.0rem,7.1vw,3.4rem);line-height:1.13}
+  .arrival-tagline{font-size:clamp(.67rem,2.2vw,.88rem);letter-spacing:.12em;max-width:520px}
+  .desktop-break{display:none}
+  .portal-grid{grid-template-columns:1fr;max-width:440px;gap:17px;margin-top:96px}
+  .portal{min-height:220px;padding:3px 14px 17px}
+  .portal-art{height:120px;width:75%}
+  .portal-initials{font-size:1.6rem}
+  .portal-title{font-size:.8rem}
+  .portal-motto{font-size:.88rem}
+  .arrival-scroll{margin-top:26px}
+}
+@media(prefers-reduced-motion:reduce){.arrival-scene{animation:none!important}.portal,.portal-art{transition:none!important}}
+
+
+/* ================================================================
+   CSI V3 — CONTINUOUS PLANETARY WORLD
+   The cosmic scene is anchored to the viewport, not the arrival.
+   All page sections move in front of this same visible Earth.
+   Scoped to the home page so Framework / Human OS remain unchanged.
+   ================================================================ */
+.home-page {
+  min-height: 100%;
+  background: #020915;
+}
+.home-page .world-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #020915 url('../images/cosmic-earth.webp') center center / cover no-repeat;
+}
+/* Atmospheric shading keeps the nebula bright and body text legible. */
+.home-page .world-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(1,5,16,.13) 0%,
+    rgba(0,5,16,.05) 46%,
+    rgba(0,6,18,.17) 75%,
+    rgba(0,4,13,.3) 100%);
+}
+/* Foreground composition, including sections outside <main>. */
+.home-page > main,
+.home-page > .discovery-cta,
+.home-page > .site-footer {
+  position: relative;
+  z-index: 1;
+}
+/* Keep navigation available during the journey. */
+.home-page .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+.home-page .arrival {
+  background: transparent;
+}
+/* The Earth is no longer tied to the arrival section. */
+.home-page .arrival-scene {
+  display: none;
+}
+.home-page .arrival::before {
+  background: linear-gradient(180deg,
+    rgba(0,3,15,.08) 0%,
+    rgba(0,5,16,.04) 48%,
+    rgba(0,3,11,.11) 70%,
+    rgba(0,4,12,.35) 100%);
+}
+/* Gentle glass layers avoid covering up the fixed horizon when scrolling. */
+.home-page main > .section {
+  background: linear-gradient(112deg,
+    rgba(1,8,21,.82) 0%,
+    rgba(2,12,29,.73) 55%,
+    rgba(1,9,23,.81) 100%);
+  border-top: 1px solid rgba(55,193,236,.22);
+}
+.home-page main > .section:nth-of-type(2n) {
+  background: linear-gradient(112deg,
+    rgba(1,8,21,.74),
+    rgba(3,19,39,.7) 60%,
+    rgba(1,8,21,.78));
+}
+.home-page main > .arrival-overview {
+  background: linear-gradient(110deg,
+    rgba(1,9,22,.76), rgba(3,20,39,.65), rgba(1,8,21,.76));
+}
+.home-page .section h2,
+.home-page .section h3 {text-shadow: 0 2px 16px rgba(0,0,0,.38)}
+.home-page .section .section-intro,
+.home-page .section > p:not(.eyebrow) {
+  color: #c7d7e9;
+}
+.home-page > .discovery-cta {
+  background: rgba(1,9,24,.78);
+}
+.home-page .site-footer {
+  background: rgba(1,7,19,.88);
+  border-top: 1px solid rgba(29,208,245,.3);
+}
+@media (max-width: 690px) {
+  .home-page .world-backdrop {
+    background-position: 50% center;
+    background-size: auto 100%;
+  }
+  /* On small screens, don't permanently cover space with the tall nav. */
+  .home-page .site-header { position: relative; }
+  .home-page main > .section {
+    background: rgba(2,10,25,.81);
+  }
+}
