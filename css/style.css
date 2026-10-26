@@ -933,58 +933,82 @@ h1 em,
   border-color: rgba(25, 212, 154, 0.5);
   color: var(--brand-emerald);
 }
-/* CSI Logo — Prominent, Blended Branding */
+/* CSI Header Logo — Large Desktop Banner */
 .site-header .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 18px;
-  flex-shrink: 0;
+  justify-content: center;
+  width: 100%;
+  flex: 1 1 100%;
 }
 
 .site-header .brand-logo {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: min(1000px, 90vw);
+  max-width: none;
+  height: auto;
   object-fit: contain;
   mix-blend-mode: screen;
+  flex-shrink: 0;
 }
 
-.site-header .brand-name {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  color: var(--text);
-}
-
-.site-header .brand-name span {
-  color: var(--brand-emerald);
+.site-header nav {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 900px) {
-  .site-header {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
   .site-header .brand-logo {
-    width: 110px;
-    height: 110px;
-  }
-
-  .site-header nav {
-    flex-wrap: wrap;
+    width: 90vw;
   }
 }
 
 @media (max-width: 600px) {
   .site-header .brand-logo {
-    width: 100px;
-    height: 100px;
+    width: 96vw;
+  }
+}
+/* Force the logo and navigation onto separate rows */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header > .brand {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex: none;
+}
+
+.site-header > .brand .brand-logo {
+  display: block;
+  width: min(1000px, 92vw);
+  height: auto;
+  max-width: none;
+  flex-shrink: 0;
+  mix-blend-mode: screen;
+}
+
+.site-header > nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+@media (max-width: 600px) {
+  .site-header > .brand .brand-logo {
+    width: 96vw;
   }
 
-  .site-header .brand-name {
-    font-size: 0.72rem;
+  .site-header > nav {
+    gap: 10px 14px;
   }
 }
