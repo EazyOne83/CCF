@@ -1611,3 +1611,156 @@ body.csi-living-earth {
   .csi-living-earth.csi-page-leaving>.site-header,
   .csi-living-earth.csi-page-leaving>main {transition:none;transform:none}
 }
+/* DISCOVERY SESSION — animated cosmic background */
+.discovery-page {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(30, 70, 120, 0.20), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(40, 120, 150, 0.14), transparent 30%),
+    linear-gradient(180deg, #07101a 0%, #040811 45%, #010204 100%);
+  overflow-x: hidden;
+}
+
+.discovery-cosmic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* fade edges into black */
+.discovery-cosmic-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, transparent 48%, rgba(0, 0, 0, 0.38) 78%, rgba(0, 0, 0, 0.72) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.72) 0%, transparent 12%, transparent 88%, rgba(0,0,0,0.72) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.38) 0%, transparent 16%, transparent 84%, rgba(0,0,0,0.55) 100%);
+}
+
+/* keep page content above the background */
+.discovery-page .site-header,
+.discovery-page main,
+.discovery-page .site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* star fields */
+.discovery-page .star-layer,
+.discovery-page .constellation-layer,
+.discovery-page .shooting-star-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.discovery-page .star-layer-1 {
+  opacity: 0.75;
+  background-image:
+    radial-gradient(2px 2px at 8% 18%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1.5px 1.5px at 18% 62%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(2px 2px at 28% 34%, rgba(190,220,255,0.9), transparent 60%),
+    radial-gradient(1.8px 1.8px at 42% 15%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1.6px 1.6px at 58% 48%, rgba(180,210,255,0.8), transparent 60%),
+    radial-gradient(2px 2px at 74% 24%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1.5px 1.5px at 84% 68%, rgba(200,230,255,0.85), transparent 60%),
+    radial-gradient(2px 2px at 92% 36%, rgba(255,255,255,0.9), transparent 60%);
+  animation: driftStarsOne 80s linear infinite;
+}
+
+.discovery-page .star-layer-2 {
+  opacity: 0.45;
+  background-image:
+    radial-gradient(1px 1px at 12% 45%, rgba(255,255,255,0.65), transparent 60%),
+    radial-gradient(1px 1px at 22% 22%, rgba(180,220,255,0.7), transparent 60%),
+    radial-gradient(1px 1px at 37% 72%, rgba(255,255,255,0.6), transparent 60%),
+    radial-gradient(1px 1px at 49% 28%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(1px 1px at 63% 58%, rgba(180,220,255,0.65), transparent 60%),
+    radial-gradient(1px 1px at 77% 14%, rgba(255,255,255,0.65), transparent 60%),
+    radial-gradient(1px 1px at 88% 52%, rgba(255,255,255,0.65), transparent 60%);
+  animation: driftStarsTwo 110s linear infinite reverse;
+}
+
+/* constellations */
+.discovery-page .constellation-layer {
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600' viewBox='0 0 900 600'%3E%3Cg stroke='rgba(155,205,255,0.5)' stroke-width='1' fill='none'%3E%3Cpath d='M90 120 L150 150 L210 115 L260 155'/%3E%3Cpath d='M520 110 L580 145 L640 130 L690 170'/%3E%3Cpath d='M180 380 L240 345 L300 390 L360 350'/%3E%3Cpath d='M610 360 L665 325 L735 345 L790 305'/%3E%3C/g%3E%3Cg fill='rgba(220,240,255,0.9)'%3E%3Ccircle cx='90' cy='120' r='2.4'/%3E%3Ccircle cx='150' cy='150' r='2.1'/%3E%3Ccircle cx='210' cy='115' r='2.2'/%3E%3Ccircle cx='260' cy='155' r='2.2'/%3E%3Ccircle cx='520' cy='110' r='2.2'/%3E%3Ccircle cx='580' cy='145' r='2.1'/%3E%3Ccircle cx='640' cy='130' r='2.3'/%3E%3Ccircle cx='690' cy='170' r='2.1'/%3E%3Ccircle cx='180' cy='380' r='2.3'/%3E%3Ccircle cx='240' cy='345' r='2.1'/%3E%3Ccircle cx='300' cy='390' r='2.2'/%3E%3Ccircle cx='360' cy='350' r='2.2'/%3E%3Ccircle cx='610' cy='360' r='2.2'/%3E%3Ccircle cx='665' cy='325' r='2.1'/%3E%3Ccircle cx='735' cy='345' r='2.3'/%3E%3Ccircle cx='790' cy='305' r='2.1'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 900px 600px;
+  animation: driftConstellations 95s ease-in-out infinite alternate;
+}
+
+.discovery-page .shooting-star-layer {
+  overflow: hidden;
+}
+
+.discovery-page .shooting-star {
+  position: absolute;
+  width: 160px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(170,225,255,0.92) 35%,
+    rgba(255,255,255,1) 60%,
+    rgba(255,255,255,0) 100%
+  );
+  box-shadow:
+    0 0 10px rgba(130, 210, 255, 0.45),
+    0 0 18px rgba(130, 210, 255, 0.28);
+  opacity: 0;
+  transform: rotate(-28deg);
+  animation: shootingStar 1.8s ease-out forwards;
+}
+
+@keyframes driftStarsOne {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-2.5%, 1.5%, 0) scale(1.03); }
+}
+
+@keyframes driftStarsTwo {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(2%, -1.5%, 0) scale(1.04); }
+}
+
+@keyframes driftConstellations {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-1.5%, 1.2%, 0); }
+}
+
+@keyframes shootingStar {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-28deg) scaleX(0.35);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-280px, 180px, 0) rotate(-28deg) scaleX(1);
+  }
+}
+
+/* optional: make the form and sections feel more integrated with the sky */
+.discovery-page .discovery-form,
+.discovery-page .section-header {
+  position: relative;
+  z-index: 2;
+}
+
+.discovery-page .discovery-form {
+  background: rgba(8, 14, 24, 0.68);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discovery-page .star-layer-1,
+  .discovery-page .star-layer-2,
+  .discovery-page .constellation-layer,
+  .discovery-page .shooting-star {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,87 @@
+/* CSI Discovery Session v8 — scoped to this page only. No changes to the home page. */
+.discovery-page.discovery-v8 {
+  --discovery-glass: rgba(5, 13, 30, .8);
+  --discovery-outline: rgba(75, 183, 239, .28);
+  color: #eef6ff;
+}
+.discovery-v8 [hidden] { display:none !important; }
+.discovery-v8 .discovery-intro {
+  position:relative; overflow:hidden; isolation:isolate;
+  min-height: min(610px, 75vh);
+  display:flex; align-items:center;
+  padding:clamp(92px,11vw,150px) 7% clamp(75px,10vw,130px);
+  background:radial-gradient(ellipse 55% 85% at 52% 65%,rgba(5,32,66,.5),transparent 80%);
+  border-bottom:1px solid rgba(64,167,213,.2);
+}
+.discovery-v8 .discovery-intro:after {
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(0,3,12,.75),rgba(0,3,12,.08) 55%,rgba(0,3,12,.45));
+}
+.discovery-v8 .discovery-intro__inner {width:min(100%,1050px);margin:0 auto;position:relative;z-index:1;}
+.discovery-v8 .discovery-intro h1 {font-size:clamp(2.6rem,5.7vw,5.8rem);font-weight:750;max-width:900px;letter-spacing:-.047em;line-height:1.12;margin:0 0 28px;text-wrap:balance;}
+.discovery-v8 .discovery-intro h1 em {font-style:normal;color:#79d9ff;text-shadow:0 0 30px rgba(0,169,255,.32);}
+.discovery-v8 .discovery-lead {max-width:750px;color:#c4d6e7;font-size:clamp(1rem,1.45vw,1.22rem);line-height:1.75;}
+.discovery-v8 .discovery-lead strong {color:#e9f7ff;font-weight:600;}
+.discovery-v8 .discovery-quicklinks {display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:27px;}
+.discovery-v8 .discovery-intro .button {border-radius:100px;color:#e9faff;background:linear-gradient(115deg,rgba(5,104,149,.9),rgba(5,51,87,.95));padding:14px 24px;border:1px solid #36bde4;box-shadow:0 0 25px rgba(43,191,231,.13)}
+.discovery-v8 .discovery-secondary-link {color:#a4eaff;font-weight:600;}
+.discovery-v8 .discovery-intro__foot {margin-top:42px;color:rgba(213,239,255,.64);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;}
+.discovery-v8 .section {width:min(100%,1250px);max-width:1250px; padding:clamp(65px,9vw,110px) 5%;}
+.discovery-v8 .discovery-overview h2, .discovery-v8 .discovery-request-section h2, .discovery-v8 .discovery-closing h2 {max-width:850px;}
+.discovery-v8 .discovery-highlights {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px;}
+.discovery-v8 .discovery-highlight {padding:29px 27px;border-radius:20px;border:1px solid rgba(75,183,239,.26);background:linear-gradient(145deg,rgba(9,26,49,.82),rgba(4,11,23,.78));box-shadow:inset 0 1px rgba(255,255,255,.04);}
+.discovery-v8 .discovery-step {font-weight:700;letter-spacing:.12em;font-size:.69rem;color:#73d9f8;}
+.discovery-v8 .discovery-highlight h3 {font-size:1.32rem;margin:16px 0 10px;}
+.discovery-v8 .discovery-highlight p {margin:0;color:#b5c8da;line-height:1.7;font-size:.92rem;}
+.discovery-v8 .discovery-section-head {display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:32px;}
+.discovery-v8 .discovery-status-note {flex-shrink:0;border:1px solid rgba(45,202,170,.35);padding:9px 16px;border-radius:50px;background:rgba(6,33,34,.72);color:#b5f6dc;font-size:.78rem;}
+.discovery-v8 .discovery-status-dot {display:inline-block;width:7px;height:7px;border-radius:50%;background:#30d5a7;margin-right:7px;}
+.discovery-v8 .discovery-form-v8 {width:100%;max-width:100%;padding:clamp(22px,4vw,47px);background:linear-gradient(145deg,rgba(9,23,45,.9),rgba(3,10,24,.92));border:1px solid rgba(90,186,244,.28);border-radius:25px;box-shadow:0 24px 80px rgba(0,0,0,.33);}
+.discovery-v8 .discovery-format-fieldset {padding:0;margin:0 0 35px;border:0;min-width:0;}
+.discovery-v8 .discovery-format-fieldset legend {font-size:1.26rem;font-weight:720;padding:0;margin-bottom:6px;}
+.discovery-v8 .discovery-required {color:#81def9;}
+.discovery-v8 .discovery-field-help, .discovery-v8 .discovery-input-help {color:#9eb5c8;font-size:.85rem;line-height:1.55;}
+.discovery-v8 .discovery-field-help {margin:0 0 22px;}
+.discovery-v8 .discovery-methods {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.discovery-v8 .discovery-method {position:relative;min-width:0;cursor:pointer;}
+.discovery-v8 .discovery-method input {position:absolute;opacity:0;width:1px;height:1px;}
+.discovery-v8 .discovery-method-content {display:flex;flex-direction:column;gap:10px;min-height:190px;height:100%;padding:22px 19px;border:1px solid rgba(116,174,214,.3);border-radius:18px;background:rgba(7,23,43,.72);transition:border-color .2s,box-shadow .2s,transform .2s,background .2s;}
+.discovery-v8 .discovery-method-icon {display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(42,173,223,.12);font-size:1.4rem;color:#81e9fa;}
+.discovery-v8 .discovery-method strong {font-size:1rem;line-height:1.3;color:#eefbff;}
+.discovery-v8 .discovery-method small {font-size:.79rem;color:#a1b9cc;line-height:1.5;}
+.discovery-v8 .discovery-method input:checked + .discovery-method-content {border-color:#50dcf4;background:linear-gradient(145deg,rgba(12,66,89,.68),rgba(8,24,49,.9));box-shadow:0 0 0 1px rgba(60,213,238,.22),0 0 28px rgba(28,189,225,.12)}
+.discovery-v8 .discovery-method:hover .discovery-method-content {transform:translateY(-2px);border-color:#7bd2f0;}
+.discovery-v8 .discovery-method input:focus-visible + .discovery-method-content {outline:3px solid #70e6fc;outline-offset:3px;}
+.discovery-v8 .discovery-input-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px;}
+.discovery-v8 .form-group {margin-bottom:26px;}
+.discovery-v8 .form-group label {font-weight:650;color:#e4f5ff;font-size:.93rem;}
+.discovery-v8 .form-group input,.discovery-v8 .form-group select,.discovery-v8 .form-group textarea {background:rgba(3,12,26,.78);border:1px solid rgba(110,175,214,.35);border-radius:11px;color:#f1faff;}
+.discovery-v8 .form-group input::placeholder,.discovery-v8 .form-group textarea::placeholder {color:#8aa5bc;}
+.discovery-v8 .form-group input:focus,.discovery-v8 .form-group select:focus,.discovery-v8 .form-group textarea:focus {border-color:#42d1ec;box-shadow:0 0 0 3px rgba(66,209,236,.13);}
+.discovery-v8 .discovery-input-help {display:block;margin-top:8px;}
+.discovery-v8 .discovery-checkout-note {display:flex;align-items:flex-start;gap:17px;margin:8px 0 24px;padding:22px;border:1px solid rgba(93,204,216,.3);border-radius:15px;background:rgba(16,50,63,.32);}
+.discovery-v8 .discovery-checkout-symbol {color:#84e7dc;font-size:2rem;line-height:1;}
+.discovery-v8 .discovery-checkout-note strong {font-size:.98rem;color:#d5f9fa;}
+.discovery-v8 .discovery-checkout-note p {color:#b1c7d6;margin:6px 0 0;font-size:.85rem;line-height:1.65;}
+.discovery-v8 .discovery-submit {cursor:pointer;font:inherit;font-weight:700;width:100%;border-radius:11px;min-height:54px;background:linear-gradient(100deg,#15aed6,#067cad);border:0;color:#fff;box-shadow:0 0 28px rgba(24,178,213,.17);}
+.discovery-v8 .discovery-submit:disabled {opacity:.65;cursor:wait;}
+.discovery-v8 .discovery-form-fineprint {margin:18px 0 0;color:#9fb2c4;font-size:.8rem;}
+.discovery-v8 #form-message {margin:16px 0 0;min-height:1.5em;font-weight:600;}
+.discovery-v8 #form-message.form-success {color:#83f4c3;}
+.discovery-v8 #form-message.form-error {color:#ffb9bc;}
+.discovery-v8 .discovery-closing {padding-bottom:110px;}
+.discovery-v8 .discovery-closing .text-link {margin-right:20px;}
+@media (max-width:1000px) {.discovery-v8 .discovery-methods {grid-template-columns:repeat(2,minmax(0,1fr));}.discovery-v8 .discovery-method-content {min-height:160px;}}
+@media (max-width:690px) {
+ .discovery-v8 .discovery-intro {min-height:0;padding:72px 7% 74px;}
+ .discovery-v8 .discovery-intro h1 {font-size:clamp(2.4rem,9vw,3.8rem);}
+ .discovery-v8 .discovery-intro__foot {margin-top:30px;font-size:.66rem;}
+ .discovery-v8 .discovery-highlights,.discovery-v8 .discovery-input-grid {grid-template-columns:1fr;}
+ .discovery-v8 .discovery-section-head {align-items:flex-start;flex-direction:column;}
+ .discovery-v8 .discovery-method-content {padding:17px 14px;min-height:175px;}
+ .discovery-v8 .discovery-method strong {font-size:.9rem;}
+ .discovery-v8 .discovery-method small {font-size:.75rem;}
+ .discovery-v8 .discovery-quicklinks {align-items:flex-start;flex-direction:column;gap:14px;}
+}
+@media (max-width:380px) {.discovery-v8 .discovery-methods {grid-template-columns:1fr;}.discovery-v8 .discovery-method-content {min-height:100px;}}
+@media (prefers-reduced-motion:reduce) {.discovery-v8 .discovery-method-content {transition:none!important;}}

@@ -1,213 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Request a Discovery Session | Human OS</title>
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b16">
+  <meta name="description" content="Explore a personal Human OS Discovery Session with flexible email, text, live chat or video options.">
+  <title>Human OS Discovery Session | Coherent Systems Institute</title>
+  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/discovery-session.css?v=8">
+  <script src="js/script.js?v=8" defer></script>
 </head>
+<body class="discovery-page discovery-v8">
 
-<body class="discovery-page">
-    
-    <header class="site-header">
+  <div class="discovery-cosmic-bg" aria-hidden="true">
+    <div class="star-layer star-layer-1"></div>
+    <div class="star-layer star-layer-2"></div>
+    <div class="constellation-layer"></div>
+    <div class="shooting-star-layer"></div>
+</div>
+
+  <header class="site-header">
     <a class="brand" href="index.html#home" aria-label="Coherent Systems Institute home">
-        COHERENT SYSTEMS <span>INSTITUTE</span>
+      <img class="brand-logo" src="images/csi-logo.png" alt="Coherent Systems Institute — Expanding Human Experience">
     </a>
-
     <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="human-os.html">Human OS</a>
-        <a href="framework.html">Framework</a>
-        <a href="index.html#journey">Hero's Journey</a>
-        <a href="discovery-session.html">Discovery Session</a>
+      <a href="framework.html">Framework</a>
+      <a href="human-os.html">Human OS</a>
+      <a href="discovery-session.html" aria-current="page">Discovery Session</a>
+      <a href="index.html#dynamics">Dynamics</a>
+      <a href="index.html#journey">Hero's Journey</a>
+      <a href="index.html#research">Research</a>
+      <a href="https://coherentsystems.discourse.group/" target="_blank" rel="noopener noreferrer">Community</a>
+      <a href="index.html#about">About</a>
     </nav>
-</header>
-    <main>
+  </header>
 
-        <section class="section">
-            <div class="section-header">
+  <main id="home">
+    <section class="discovery-intro" aria-labelledby="discovery-title">
+      <div class="discovery-intro__inner">
+        <p class="eyebrow">HUMAN OS / PERSONAL EXPLORATION</p>
+        <h1 id="discovery-title">Your journey begins with <em>a conversation.</em></h1>
+        <p class="discovery-lead">Explore your experiences, patterns and questions through a one-on-one Human OS Discovery Session—<strong>in the format that's comfortable for you.</strong></p>
+        <div class="discovery-quicklinks">
+          <a class="button" href="#session-request">Choose your session format <span aria-hidden="true">↗</span></a>
+          <a class="discovery-secondary-link" href="human-os.html">What is Human OS? <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="discovery-intro__foot">Thoughtful inquiry · Your pace · Text-first options</div>
+      </div>
+    </section>
 
-                <p class="eyebrow">HUMAN OS · DISCOVERY SESSION</p>
+    <section class="section discovery-overview" aria-labelledby="discovery-process-title">
+      <p class="eyebrow">A MORE PERSONAL WAY TO EXPLORE</p>
+      <h2 id="discovery-process-title">No video call required.</h2>
+      <p class="section-intro">You can start in writing, have a scheduled live text conversation, or choose voice/video if you prefer. The goal is meaningful exploration—not a particular technology.</p>
+      <div class="discovery-highlights">
+        <article class="discovery-highlight"><span class="discovery-step">01 / CHOOSE</span><h3>Your format</h3><p>Pick email, text messages, a scheduled live chat, or a call.</p></article>
+        <article class="discovery-highlight"><span class="discovery-step">02 / SHARE</span><h3>Your starting point</h3><p>Tell us what you'd like to understand or explore.</p></article>
+        <article class="discovery-highlight"><span class="discovery-step">03 / CONFIRM</span><h3>Your session</h3><p>You'll receive scheduling and secure payment details before your session is confirmed.</p></article>
+      </div>
+    </section>
 
-                <h1>Let's Start With You.</h1>
+    <section class="section discovery-request-section" id="session-request" aria-labelledby="request-title">
+      <div class="discovery-section-head">
+        <div>
+          <p class="eyebrow">BEGIN THE CONVERSATION</p>
+          <h2 id="request-title">Request a Discovery Session.</h2>
+          <p class="section-intro">Select the kind of conversation you'd like. We'll reply by email to coordinate the next step.</p>
+        </div>
+        <div class="discovery-status-note"><span class="discovery-status-dot" aria-hidden="true"></span> Session inquiries open</div>
+      </div>
 
-                <p>
-                    Everyone has a different story, different challenges,
-                    and different goals. The Human OS Discovery Session
-                    is an opportunity to explore yours.
-                </p>
+      <form class="discovery-form discovery-form-v8" id="discovery-request-form" action="https://formspree.io/f/mnpppjvd" method="POST">
+        <input type="hidden" name="requestType" value="Human OS Discovery Session — inquiry; no payment collected">
+        <fieldset class="discovery-format-fieldset">
+          <legend>How would you like to connect? <span class="discovery-required">*</span></legend>
+          <p class="discovery-field-help">Choose one. Each option is a personal session request, not an instant connection.</p>
+          <div class="discovery-methods">
+            <label class="discovery-method"><input type="radio" name="contactMethod" value="email" checked required><span class="discovery-method-content"><span class="discovery-method-icon" aria-hidden="true">✉</span><strong>Email exchange</strong><small>Thoughtful, asynchronous written replies</small></span></label>
+            <label class="discovery-method"><input type="radio" name="contactMethod" value="sms" required><span class="discovery-method-content"><span class="discovery-method-icon" aria-hidden="true">◉</span><strong>Text / SMS</strong><small>Discuss by text messages</small></span></label>
+            <label class="discovery-method"><input type="radio" name="contactMethod" value="live-text" required><span class="discovery-method-content"><span class="discovery-method-icon" aria-hidden="true">⌁</span><strong>Scheduled live chat</strong><small>Real-time typing at an agreed time</small></span></label>
+            <label class="discovery-method"><input type="radio" name="contactMethod" value="video" required><span class="discovery-method-content"><span class="discovery-method-icon" aria-hidden="true">▷</span><strong>Video conversation</strong><small>Optional face-to-face session</small></span></label>
+          </div>
+        </fieldset>
 
-                <p>
-                    Share a little about yourself and request a
-                    one-on-one conversation. I'll review your request
-                    and contact you to discuss scheduling.
-                </p>
+        <div class="discovery-input-grid">
+          <div class="form-group"><label for="full-name">Your name <span class="discovery-required">*</span></label><input type="text" id="full-name" name="fullName" autocomplete="name" required placeholder="How should we address you?"></div>
+          <div class="form-group"><label for="email">Email address <span class="discovery-required">*</span></label><input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com"></div>
+        </div>
+        <div class="form-group" id="phone-group" hidden>
+          <label for="phone">Phone number <span class="discovery-required">*</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="Include your country code">
+          <small class="discovery-input-help">Only requested when you choose SMS. Please don't include private health details in ordinary text messages.</small>
+        </div>
+        <div class="form-group" id="availability-group" hidden>
+          <label for="availability">When are you generally available? <span class="discovery-required">*</span></label>
+          <select id="availability" name="availability">
+            <option value="">Choose a time preference</option>
+            <option value="weekday-mornings">Weekday mornings</option>
+            <option value="weekday-afternoons">Weekday afternoons</option>
+            <option value="weekday-evenings">Weekday evenings</option>
+            <option value="weekends">Weekends</option>
+            <option value="flexible">Flexible</option>
+          </select>
+          <small class="discovery-input-help">We'll confirm the exact time with you later.</small>
+        </div>
+        <div class="form-group"><label for="goals">What would you like to explore? <span class="discovery-required">*</span></label><textarea id="goals" name="goals" rows="5" required placeholder="A few sentences are enough. What brings you to Human OS, and what questions are on your mind?"></textarea><small class="discovery-input-help">Please keep this introductory note general. Avoid sending medical records or sensitive personal information.</small></div>
+        <div class="discovery-checkout-note">
+          <span class="discovery-checkout-symbol" aria-hidden="true">◇</span>
+          <div><strong>Paid session · secure checkout to follow</strong><p>This form is a request only; <strong>no payment is collected here</strong>. Session pricing, payment details and timing must be agreed upon before any appointment is confirmed.</p></div>
+        </div>
+        <button class="button discovery-submit" type="submit">Send my session request <span aria-hidden="true">↗</span></button>
+        <p class="discovery-form-fineprint">This is an educational exploration of the developing Human OS framework, not healthcare, diagnosis, treatment or crisis support.</p>
+        <p id="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="section discovery-closing" aria-labelledby="discovery-closing-title"><p class="eyebrow">EXPLORE TOGETHER</p><h2 id="discovery-closing-title">Curiosity is a good place to begin.</h2><p class="section-intro">Not ready for a personal session? Explore the framework or join a public community discussion first.</p><div class="discovery-quicklinks"><a class="text-link" href="framework.html">Explore the CCF Framework →</a><a class="text-link" href="https://coherentsystems.discourse.group/" target="_blank" rel="noopener noreferrer">Visit the Community ↗</a></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html#home">COHERENT SYSTEMS <span>INSTITUTE</span></a><p>Exploring consciousness, coherence, and complex systems.</p><p class="copyright">© <span id="current-year">2026</span> Coherent Systems Institute</p></footer>
+  <script>
+  (() => {
+    const form = document.getElementById('discovery-request-form');
+    const phoneGroup = document.getElementById('phone-group');
+    const phoneInput = document.getElementById('phone');
+    const availGroup = document.getElementById('availability-group');
+    const availInput = document.getElementById('availability');
+    const message = document.getElementById('form-message');
+    const submit = form.querySelector('[type="submit"]');
+    const radios = [...form.querySelectorAll('input[name="contactMethod"]')];
+    function syncChoice() {
+      const selected = radios.find((x) => x.checked)?.value || 'email';
+      const needsPhone = selected === 'sms';
+      const needsTime = selected === 'live-text' || selected === 'video';
+      phoneGroup.hidden = !needsPhone;
+      phoneInput.required = needsPhone;
+      if (!needsPhone) phoneInput.value = '';
+      availGroup.hidden = !needsTime;
+      availInput.required = needsTime;
+      if (!needsTime) availInput.value = '';
+    }
+    radios.forEach((input) => input.addEventListener('change', syncChoice));
+    syncChoice();
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      submit.disabled = true;
+      message.className = '';
+      message.textContent = 'Sending your request…';
+      try {
+        const response = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+        if (response.ok) {
+          message.className = 'form-success';
+          message.textContent = 'Your request has been sent. We’ll email you with the next steps, including session details and payment information. No appointment is confirmed yet.';
+          form.reset();
+          syncChoice();
+        } else {
+          message.className = 'form-error';
+          message.textContent = 'We could not send your request right now. Please try again.';
+        }
+      } catch (error) {
+        message.className = 'form-error';
+        message.textContent = 'Connection problem. Please check your internet connection and try again.';
+      } finally {submit.disabled = false;}
+    });
+  })();
+</script>
 
-            </div>
-        </section>
+<!-- SHOOTING STAR ANIMATION -->
+<script>
+(function () {
+    if (!document.body.classList.contains("discovery-page")) return;
 
-        <section class="section">
-            <div class="section-header">
+    const layer = document.querySelector(".shooting-star-layer");
+    if (!layer) return;
 
-                <h2>Request Your Session</h2>
+    function createShootingStar() {
+        const star = document.createElement("span");
+        star.className = "shooting-star";
 
-                <p>
-                    Complete the form below to tell me what you're
-                    looking for and how best to reach you.
-                </p>
+        star.style.top = (8 + Math.random() * 35) + "%";
+        star.style.left = (58 + Math.random() * 28) + "%";
+        star.style.animationDuration =
+            (1.4 + Math.random() * 1.2) + "s";
 
-            </div>
+        layer.appendChild(star);
 
-            <form
-                id="discovery-request-form"
-                class="discovery-form"
-                action="https://formspree.io/f/mnpppjvd"
-                method="POST"
->
-                 <div class="form-group">
-                    <label for="full-name">Your name</label>
-                    <input
-                        type="text"
-                        id="full-name"
-                        name="fullName"
-                        autocomplete="name"
-                        required
-                    >
-                </div>
+        star.addEventListener("animationend", () => {
+            star.remove();
+        }, { once: true });
+    }
 
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        autocomplete="email"
-                        required
-                    >
-                </div>
+    function scheduleNextStar() {
+        const delay = 5000 + Math.random() * 7000;
 
-                <div class="form-group">
-                    <label for="contact-method">
-                        Preferred way to connect
-                    </label>
-
-                    <select
-                        id="contact-method"
-                        name="contactMethod"
-                        required
-                    >
-                        <option value="">Choose an option</option>
-                        <option value="email">Email</option>
-                        <option value="phone">Phone</option>
-                        <option value="video">Video conversation</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="availability">
-                        When are you generally available?
-                    </label>
-
-                    <select
-                        id="availability"
-                        name="availability"
-                        required
-                    >
-                        <option value="">Choose a time preference</option>
-                        <option value="weekday-mornings">
-                            Weekday mornings
-                        </option>
-                        <option value="weekday-afternoons">
-                            Weekday afternoons
-                        </option>
-                        <option value="weekday-evenings">
-                            Weekday evenings
-                        </option>
-                        <option value="weekends">
-                            Weekends
-                        </option>
-                        <option value="flexible">
-                            Flexible
-                        </option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="goals">
-                        What would you like to explore?
-                    </label>
-
-                    <textarea
-                        id="goals"
-                        name="goals"
-                        rows="5"
-                        placeholder="Tell me a little about what brings you here and what you hope to gain."
-                        required
-                    ></textarea>
-                </div>
-
-                <p class="form-note">
-                    Your request is not a confirmed appointment.
-                    I'll contact you to discuss a suitable time.
-                </p>
-
-                <button type="submit" class="btn">
-                    Submit Session Request
-                </button>
-
-                <p id="form-message" role="status" aria-live="polite"></p>
-
-            </form>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>
-            &copy; 2026 Coherent Systems Institute.
-            All rights reserved.
-        </p>
-    </footer>
-
-    <script>
-    document
-        .getElementById("discovery-request-form")
-        .addEventListener("submit", async function (event) {
-            event.preventDefault();
-
-            const form = event.currentTarget;
-            const message = document.getElementById("form-message");
-            const button = form.querySelector('button[type="submit"]');
-
-            message.textContent = "Sending your request...";
-            button.disabled = true;
-
-            try {
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                    headers: {
-                        Accept: "application/json"
-                    }
-                });
-
-                if (response.ok) {
-                    message.textContent =
-                        "Your request has been sent. Thank you! I'll contact you to discuss a suitable time.";
-                    form.reset();
-                } else {
-                    message.textContent =
-                        "We couldn't send your request. Please try again later.";
-                }
-            } catch (error) {
-                message.textContent =
-                    "We couldn't connect to submit your request. Please check your connection and try again.";
-            } finally {
-                button.disabled = false;
+        setTimeout(() => {
+            if (!document.hidden) {
+                createShootingStar();
             }
-        });
+            scheduleNextStar();
+        }, delay);
+    }
+
+    scheduleNextStar();
+})();
 </script>
 
 </body>
